@@ -42,3 +42,8 @@ CMD ["node","server.js"]
 # docker run a
 # This applies to ALL Docker commands where IDs are needed.
 
+# For building image , just run the command : docker build .
+# For running the container based on the given image id use : docker run <image id>
+# For listing all running containers : docker ps
+# For listing all containers : docker ps -a
+
