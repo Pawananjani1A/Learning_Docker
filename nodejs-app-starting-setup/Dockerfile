@@ -5,12 +5,19 @@ FROM node:latest
 # Change the working directory of the container to the /app directory
 WORKDIR /app
 
-# Copy all the content from the local directory containing the Dockerfile 
-# to the /app directory of the docker container
-COPY . /app
+
+# Copy the package.json file to the app directory so that the npm install
+# command doesn't get invalidated when  the image is rebuilt
+COPY package.json /app
 
 # Run the commands to prepare the image for the nodejs app
 RUN npm install
+
+
+# Copy the rest of content from the local directory containing the Dockerfile 
+# to the /app directory of the docker container
+COPY . /app
+
 
 # Now our container is ready based on the image template with all the necessary code and packages
 # It's time now to work on the container
