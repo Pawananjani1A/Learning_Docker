@@ -47,3 +47,9 @@ CMD ["node","server.js"]
 # For listing all running containers : docker ps
 # For listing all containers : docker ps -a
 
+# Images are "Read-Only" , so after making any changes to the code or dockerfile 
+# you have to rebuild the image
+
+#Images are Layer-based i.e on rebuilding the image only the changes in the code are executed again
+# Docker does this by using the images caches whereever no change is done
+
